@@ -19,13 +19,8 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Configurar Gradle
-        uses: gradle/actions/setup-gradle@v4
-        with:
-          gradle-version: 8.10.2
-
       - name: Build APK debug
-        run: gradle assembleDebug
+        run: ./gradlew assembleDebug
 
       - name: Enviar APK
         uses: actions/upload-artifact@v4
